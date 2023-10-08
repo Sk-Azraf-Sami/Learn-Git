@@ -1,5 +1,5 @@
 # Learn-Git
-**If two contributors work on same project, how they create there own branch and merge it with main branch?**
+### If two contributors work on same project, how they create there own branch and merge it with main branch?
 <br>
 When multiple contributors are working on the same project, they can follow the following steps to create their own branches and merge them with the main branch:<br>
  
@@ -52,3 +52,53 @@ Once you are on the main branch, you can initiate the merge operation to bring c
 git merge feature
 ```
 This will merge the changes from the "feature" branch into the main branch.
+
+<br> 
+<br> 
+
+### I deleted my repo from local but I upload it to github before deleting. Now when I clone, I get only main branch but I want to get back all branch in my local device.
+<br>
+If you have deleted the local copy of your Git repository but it still exists on GitHub, you can clone the repository again and fetch all the branches. By default, when you clone a repository, it only clones the default branch (usually "main" or "master"). To fetch all branches, you can follow these steps:
+
+1. Clone the repository to your local machine:
+
+   ```bash
+   git clone https://github.com/yourusername/yourrepository.git
+   ```
+
+   Replace `yourusername` with your GitHub username and `yourrepository` with the name of your repository.
+
+2. Change your working directory to the cloned repository:
+
+   ```bash
+   cd yourrepository
+   ```
+
+3. Fetch all remote branches:
+
+   ```bash
+   git fetch --all
+   ```
+
+   This command will fetch all branches from the remote repository on GitHub.
+
+4. List all branches (both local and remote):
+
+   ```bash
+   git branch -a
+   ```
+
+   You should see a list of all branches, including remote branches from GitHub.
+
+5. Create and switch to a local branch based on a remote branch:
+
+   To work on a specific remote branch locally, you can create and switch to a new local branch based on that remote branch. For example, if you want to work on the "dev" branch:
+
+   ```bash
+   git checkout -b dev origin/dev
+   ```
+
+   This command creates a new local branch called "dev" and sets it up to track the "origin/dev" remote branch.
+
+Now you have cloned the repository, fetched all branches, and can work on any branch you need.
+
