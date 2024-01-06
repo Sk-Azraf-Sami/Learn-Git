@@ -102,3 +102,50 @@ If you have deleted the local copy of your Git repository but it still exists on
 
 Now you have cloned the repository, fetched all branches, and can work on any branch you need.
 
+<br>
+<br>
+
+###  Navigate to a specific commit
+If you want to navigate to a specific commit in your Git history, you can use the `git checkout` command along with the commit hash or a branch name.
+
+Here's how you can do it:
+
+```bash
+git checkout <commit_hash>
+```
+
+Replace `<commit_hash>` with the actual commit hash you want to go to. You can find the commit hash by using `git log` and copying the hash of the commit you're interested in.
+
+For example:
+
+```bash
+git checkout abcdef123456
+```
+
+After running this command, your working directory will be in the state of the specified commit. Keep in mind that you will be in a "detached HEAD" state, which means you are not on a branch, and any changes you make won't be associated with a branch.
+
+If you want to create a branch from this commit, you can do:
+
+```bash
+git checkout -b new_branch_name
+```
+
+Replace `new_branch_name` with the name you want for your new branch.
+
+If you just want to view the files at a specific commit without modifying anything, you can use:
+
+```bash
+git show <commit_hash>
+```
+
+This will display the changes made in that specific commit.
+
+Remember that going back in history in this way is a read-only operation. If you want to make changes or commits from this point, it's usually better to create a new branch.
+
+<br> 
+<br>
+
+### Undo all changes after commit
+```bash
+git restore .
+```
