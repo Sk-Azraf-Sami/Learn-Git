@@ -123,6 +123,11 @@ git checkout abcdef123456
 ```
 
 After running this command, your working directory will be in the state of the specified commit. Keep in mind that you will be in a "detached HEAD" state, which means you are not on a branch, and any changes you make won't be associated with a branch.
+<br> 
+Then use 
+```bash
+git checkout main
+```
 
 If you want to create a branch from this commit, you can do:
 
