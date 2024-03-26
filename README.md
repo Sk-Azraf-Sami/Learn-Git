@@ -154,3 +154,90 @@ Remember that going back in history in this way is a read-only operation. If you
 ```bash
 git restore .
 ```
+<br>
+<br> 
+
+### Push Empty Directory to GitHub 
+Sure, here's a step-by-step guide on how to push empty folders to GitHub:
+
+1. Open your terminal.
+
+2. Navigate to the directory where you want to create the empty folder. For example, if you want to create an empty folder named `static`, you would use the command `cd path/to/your/project`.
+
+3. Create the empty folder using the `mkdir` command. For example, `mkdir static`.
+
+4. Git doesn't track empty folders by default. So, create a `.gitkeep` file in the `static` directory: `touch static/.gitkeep`.
+
+5. Repeat steps 3 and 4 for any other directories you want to create. For example, for an `uploads` directory, you would use `mkdir uploads` and `touch uploads/.gitkeep`.
+
+6. Now, add these changes to the staging area with `git add .`. The `.` tells Git to add all changes in the current directory and its subdirectories.
+
+7. Commit these changes with `git commit -m "Add empty directories"`. This saves a snapshot of your changes.
+
+8. Finally, push these changes to GitHub with `git push origin your-branch-name`. Replace `your-branch-name` with the name of the branch you're working on.
+
+Now, when you go to your GitHub repository, you should see the `static` and `uploads` directories, even though they're empty.
+
+Exmaple: 
+```
+# Ignore Python bytecode files
+__pycache__/
+
+# Ignore all files in static and uploads directories
+static/*
+uploads/*
+
+# Except for the .gitkeep files
+!static/.gitkeep
+!uploads/.gitkeep
+```
+
+The `.gitignore` file you have is already set up to allow the `static` and `uploads` directories to be pushed to GitHub, even if they are empty. This is achieved by the `!static/.gitkeep` and `!uploads/.gitkeep` lines, which tell Git to not ignore these `.gitkeep` files.
+
+However, Git doesn't track empty directories by default. The `.gitkeep` file is a convention used in the Git community to keep an otherwise empty directory under version control. The file could be named anything; `.gitkeep` is not a special name recognized by Git.
+
+To ensure the `static` and `uploads` directories are pushed to GitHub, even if they're empty, you need to create a `.gitkeep` file in each of them:
+
+```bash
+touch static/.gitkeep
+touch uploads/.gitkeep
+```
+
+Then, add and commit these `.gitkeep` files:
+
+```bash
+git add static/.gitkeep uploads/.gitkeep
+git commit -m "Add .gitkeep files to static and uploads directories"
+```
+
+Now, when you push to GitHub, the `static` and `uploads` directories will be included, even if they're empty.
+
+<br>
+<br>
+
+### Confirming which files are ignored
+To see which files are being ignored by Git based on your `.gitignore` file, you can use the `git check-ignore` command. Here's how you can do it:
+
+```bash
+git check-ignore -v <file_or_directory_path>
+```
+
+Replace `<file_or_directory_path>` with the path of the file or directory you want to check. This command will output the line in your `.gitignore` file that is causing the file or directory to be ignored.
+
+For example, if you want to check if the `static` directory is being ignored:
+
+```bash
+git check-ignore -v static
+```
+
+If any specific file is being ignored, you can replace `static` with the file name you want to check.
+
+**Another Way:**
+If you want to confirm which files are ignored, you can run:
+
+```bash
+git status --ignored
+```
+This command will display a list of ignored files in your repository.
+
+
