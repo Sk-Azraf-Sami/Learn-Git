@@ -56,7 +56,7 @@ This will merge the changes from the "feature" branch into the main branch.
 <br> 
 <br> 
 
-### I deleted my repo from local but I upload it to github before deleting. Now when I clone, I get only main branch but I want to get back all branch in my local device.
+### I deleted my repo from local but I upload it to github before deleting. Now when I clone, I get only main branch but I want to get back all branches in my local device.
 <br>
 If you have deleted the local copy of your Git repository but it still exists on GitHub, you can clone the repository again and fetch all the branches. By default, when you clone a repository, it only clones the default branch (usually "main" or "master"). To fetch all branches, you can follow these steps:
 
@@ -239,5 +239,37 @@ If you want to confirm which files are ignored, you can run:
 git status --ignored
 ```
 This command will display a list of ignored files in your repository.
+<br>
+<br>
+
+### Top 5 git commands need to know (By Sahil, one of my favorite YouTubers):
+Certainly! Here's an explanation of each of the Git commands you mentioned:
+
+1. **Git Rebase**:
+   - `git rebase` is used to reapply commits on top of another base tip.
+   - It is often used to maintain a linear project history by moving, combining, or squashing commits.
+   - When you rebase, Git takes the commits in your current working branch, "replays" them on top of the branch you're rebasing onto, and updates the branch pointer to the new commit.
+
+2. **Git Fetch**:
+   - `git fetch` is used to retrieve changes from a remote repository without merging them into the local branch.
+   - It downloads the latest changes from a remote repository but doesn't apply them to your working branch. Instead, it updates the remote tracking branches (like `origin/master`), allowing you to see what others have been working on.
+
+3. **Git Reset**:
+   - `git reset` is used to move the HEAD and/or reset the index to a specific state.
+   - It can be used to undo changes in your working directory and staging area (index).
+   - There are three main modes of `git reset`: `--soft`, `--mixed` (default), and `--hard`, which determine whether changes are kept in the working directory, unstaged, or completely discarded.
+
+4. **Git Cherry Pick**:
+   - `git cherry-pick` is used to apply a specific commit from one branch onto another branch.
+   - It's useful for selectively applying changes or fixes from one branch to another without merging the entire branch.
+   - You specify the commit to cherry-pick by its SHA-1 hash or a reference (branch name, tag, etc.).
+
+5. **Git Stash**:
+   - `git stash` is used to temporarily store changes in your working directory and index, allowing you to switch branches or perform other operations without committing them.
+   - It's useful when you want to work on a different task or address an urgent issue without committing incomplete changes.
+   - You can later apply the stashed changes to your working directory using `git stash apply` or `git stash pop`.
+
+These commands are powerful tools in Git that help manage and manipulate the history and state of your repository. It's important to use them carefully, especially when working with shared branches and repositories.
+
 
 
