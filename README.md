@@ -286,5 +286,64 @@ Here's what each part of the command does:
 
 After running this command, the `.env` file will no longer be tracked by Git, but it will remain in your working directory. Make sure to commit the changes to the repository after running this command to complete the process.
 
+<br> 
+<br> 
 
+### Connect Github account with Git 
 
+**Configuration** <br> 
+Check connected user name
+```bash
+git config --global user.name 
+```
+Check connected email 
+```
+git config --global user.email
+```
+
+If any account is not connected, connect it 
+```bash
+git config --global user.name "github_user_name"
+git config --global user.email "github_user_email"
+```
+But now every time need to give token as password. 
+
+**Using SSH** <br> 
+If you're having trouble connecting Git Bash to GitHub, it's likely that you haven't set up your SSH keys or configured your Git settings. Here are the steps to do so:
+
+1. *Generate a new SSH key (if you haven't already)*
+Open Git Bash and input the following command. Replace "your_email@example.com" with your GitHub email address.
+```bash
+ssh-keygen -t ed25519 -C "your_email@example.com"
+```
+When you're prompted to "Enter a file in which to save the key," press Enter to accept the default file location.
+At the prompt, type a secure passphrase or leave it empty for no passphrase.
+
+2. *Add your SSH key to the ssh-agent*
+Start the ssh-agent in the background:
+```bash
+eval "$(ssh-agent -s)"
+```
+Add your SSH private key to the ssh-agent:
+```bash
+ssh-add ~/.ssh/id_ed25519
+```
+
+3. *Add your SSH key to your GitHub account*
+Get the SSH key content:
+```bash
+cat ~/.ssh/id_ed25519.pub
+```
+Copy the output to your clipboard.
+Go to GitHub, click on your profile photo, then click Settings. In the user settings sidebar, click SSH and GPG keys. Click New SSH key or Add SSH key. In the "Title" field, add a descriptive label for the new key. Paste your key into the "Key" field. Click Add SSH key.
+
+4. *Confirm that you've connected to GitHub*
+You can confirm that you've successfully connected your GitHub account to Git Bash by entering the following command:
+```bash
+ssh -T git@github.com
+```
+You should receive a message like this:
+```bash
+Hi username! You've successfully authenticated, but GitHub does not provide shell access.
+```
+This means that Git Bash is now successfully connected to GitHub.
