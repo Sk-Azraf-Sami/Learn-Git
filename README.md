@@ -347,3 +347,15 @@ You should receive a message like this:
 Hi username! You've successfully authenticated, but GitHub does not provide shell access.
 ```
 This means that Git Bash is now successfully connected to GitHub.
+
+<br>
+<br> 
+
+### Add description with commit 
+You can add a description to your git commit by using the `-m` option twice. The first `-m` option will be the title of your commit and the second `-m` option will be the description. Here's an example:
+
+```bash
+git commit -m "Your commit title" -m "Your commit description"
+```
+
+The first `-m` is the short description (or title) of the commit and the second `-m` is the detailed description. The detailed description can span multiple lines if needed.
