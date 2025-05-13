@@ -1,4 +1,20 @@
 # Learn-Git
+
+## Table of Contents
+
+1. [Working with Branches and Merging](#working-with-branches-and-merging)
+2. [Merging Branches: Staying on Main](#merging-branches-staying-on-main)
+3. [Restoring All Branches After Cloning](#restoring-all-branches-after-cloning)
+4. [Navigating to a Specific Commit](#navigating-to-a-specific-commit)
+5. [Undo All Changes After Commit](#undo-all-changes-after-commit)
+6. [Push Empty Directory to GitHub](#push-empty-directory-to-github)
+7. [Confirming Which Files Are Ignored](#confirming-which-files-are-ignored)
+8. [Top 5 Git Commands to Know](#top-5-git-commands-to-know)
+9. [Removing .env File from Git Index Without Deleting Locally](#removing-env-file-from-git-index-without-deleting-locally)
+10. [Connect GitHub Account with Git](#connect-github-account-with-git)
+11. [Add Description with Commit](#add-description-with-commit)
+
+
 ### If two contributors work on same project, how they create there own branch and merge it with main branch?
 <br>
 When multiple contributors are working on the same project, they can follow the following steps to create their own branches and merge them with the main branch:<br>
