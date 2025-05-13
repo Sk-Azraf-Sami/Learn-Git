@@ -12,6 +12,7 @@
 - [Removing .env File from Git Index Without Deleting Locally](#removing-env-file-from-git-index-without-deleting-locally)
 - [Connect GitHub Account with Git](#connect-github-account-with-git)
 - [Add Description with Commit](#add-description-with-commit)
+- [Connect Bitbucket Account with Git](#connect-bitbucket-account-with-git)
 
 ---
 
@@ -372,3 +373,68 @@ git commit -m "Your commit title" -m "Your commit description"
 ```
 
 The first `-m` is the short description (or title) of the commit and the second `-m` is the detailed description. The detailed description can span multiple lines if needed.
+
+
+## [Connect Bitbucket Account with Git](#connect-bitbucket-account-with-git)
+
+### Create a key
+
+```bash
+ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519_bitbucket -C "your-bitbucket-email@example.com"
+```
+
+
+### Copy the Public Key
+
+Run the following to print your public SSH key:
+
+```bash
+cat ~/.ssh/id_ed25519_bitbucket.pub
+```
+
+Copy the entire line that starts with `ssh-ed25519`.
+
+---
+
+### Add SSH Key to Bitbucket
+
+1. Go to: [Bitbucket SSH Key Settings](https://bitbucket.org/account/settings/ssh-keys/)
+2. Click **“Add Key”**
+3. Paste the copied SSH key into the text box
+4. Name it something like `Ubuntu-Laptop` or `Workstation`
+5. Click **Add SSH Key**
+
+---
+
+### Test the Connection
+
+Now run:
+
+```bash
+ssh -T git@bitbucket.org
+```
+
+If everything is set up correctly, you should see something like:
+
+```
+authenticated via ssh key.
+You can use git or hg to connect to Bitbucket. Shell access is disabled.
+```
+
+---
+
+### (Optional) Switch Git Remote to SSH
+
+If your project repo still uses HTTPS, switch it to SSH:
+
+```bash
+cd ~/Documents/petstore-playground
+
+git remote set-url origin git@bitbucket.org:robendevs/petstore-playground.git
+```
+
+Check it worked:
+
+```bash
+git remote -v
+```
