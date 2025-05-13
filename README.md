@@ -14,7 +14,7 @@
 10. [Connect GitHub Account with Git](#connect-github-account-with-git)
 11. [Add Description with Commit](#add-description-with-commit)
 
-
+## [Working with Branches and Merging](#working-with-branches-and-merging)
 ### If two contributors work on same project, how they create there own branch and merge it with main branch?
 <br>
 When multiple contributors are working on the same project, they can follow the following steps to create their own branches and merge them with the main branch:<br>
@@ -69,9 +69,9 @@ git merge feature
 ```
 This will merge the changes from the "feature" branch into the main branch.
 
-<br> 
-<br> 
+---
 
+## [Restoring All Branches After Cloning](#restoring-all-branches-after-cloning)
 ### I deleted my repo from local but I upload it to github before deleting. Now when I clone, I get only main branch but I want to get back all branches in my local device.
 <br>
 If you have deleted the local copy of your Git repository but it still exists on GitHub, you can clone the repository again and fetch all the branches. By default, when you clone a repository, it only clones the default branch (usually "main" or "master"). To fetch all branches, you can follow these steps:
@@ -118,10 +118,10 @@ If you have deleted the local copy of your Git repository but it still exists on
 
 Now you have cloned the repository, fetched all branches, and can work on any branch you need.
 
-<br>
-<br>
+---
 
-###  Navigate to a specific commit
+## [Navigating to a Specific Commit](#navigating-to-a-specific-commit)
+
 If you want to navigate to a specific commit in your Git history, you can use the `git checkout` command along with the commit hash or a branch name.
 
 Here's how you can do it:
@@ -163,17 +163,17 @@ This will display the changes made in that specific commit.
 
 Remember that going back in history in this way is a read-only operation. If you want to make changes or commits from this point, it's usually better to create a new branch.
 
-<br> 
-<br>
+---
 
-### Undo all changes after commit
+## [Undo All Changes After Commit](#undo-all-changes-after-commit)
 ```bash
 git restore .
 ```
-<br>
-<br> 
 
-### Push Empty Directory to GitHub 
+---
+
+## [Push Empty Directory to GitHub](#push-empty-directory-to-github)
+
 Sure, here's a step-by-step guide on how to push empty folders to GitHub:
 
 1. Open your terminal.
@@ -228,10 +228,9 @@ git commit -m "Add .gitkeep files to static and uploads directories"
 
 Now, when you push to GitHub, the `static` and `uploads` directories will be included, even if they're empty.
 
-<br>
-<br>
+---
 
-### Confirming which files are ignored
+## [Confirming Which Files Are Ignored](#confirming-which-files-are-ignored)
 To see which files are being ignored by Git based on your `.gitignore` file, you can use the `git check-ignore` command. Here's how you can do it:
 
 ```bash
@@ -255,10 +254,10 @@ If you want to confirm which files are ignored, you can run:
 git status --ignored
 ```
 This command will display a list of ignored files in your repository.
-<br>
-<br>
 
-### Top 5 git commands need to know (By Sahil, one of my favorite YouTubers):
+
+## [Top 5 Git Commands to Know](#top-5-git-commands-to-know)
+### Top 5 git commands need to know - By Sahil, one of my favorite YouTubers:
 Certainly! Here's an explanation of each of the Git commands you mentioned:
 
 1. **Git Rebase**:
@@ -287,10 +286,9 @@ Certainly! Here's an explanation of each of the Git commands you mentioned:
 
 These commands are powerful tools in Git that help manage and manipulate the history and state of your repository. It's important to use them carefully, especially when working with shared branches and repositories.
 
-<br>
-<br>
+---
 
-### Removing .env File from Git Index Without Deleting it Locally
+## [Removing .env File from Git Index Without Deleting Locally](#removing-env-file-from-git-index-without-deleting-locally)
 
 The command `git rm --cached .env` is used to remove a file named `.env` from the Git index without deleting it from your local filesystem. This means that the file will no longer be tracked by Git, but it will remain on your local machine. 
 
@@ -302,10 +300,9 @@ Here's what each part of the command does:
 
 After running this command, the `.env` file will no longer be tracked by Git, but it will remain in your working directory. Make sure to commit the changes to the repository after running this command to complete the process.
 
-<br> 
-<br> 
+---
 
-### Connect Github account with Git 
+## [Connect GitHub Account with Git](#connect-github-account-with-git)
 
 **Configuration** <br> 
 Check connected user name
@@ -364,10 +361,9 @@ Hi username! You've successfully authenticated, but GitHub does not provide shel
 ```
 This means that Git Bash is now successfully connected to GitHub.
 
-<br>
-<br> 
+---
 
-### Add description with commit 
+## [Add Description with Commit](#add-description-with-commit)
 You can add a description to your git commit by using the `-m` option twice. The first `-m` option will be the title of your commit and the second `-m` option will be the description. Here's an example:
 
 ```bash
